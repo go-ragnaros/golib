@@ -117,6 +117,11 @@ func (this *RowMap) GetUintD(key string, def uint) uint {
 	return uint(res)
 }
 
+func (this *RowMap) GetUint64(key string) uint64 {
+	res, _ := strconv.ParseUint(this.GetString(key), 10, 0)
+	return res
+}
+
 func (this *RowMap) GetBool(key string) bool {
 	return this.GetInt(key) != 0
 }
